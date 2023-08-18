@@ -11,8 +11,9 @@ ul {
   text-align: center;
 
   display: grid;
-  grid-template-columns: 2fr 4fr;
-  grid-template-rows: 80px 50px 1fr 50px;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto-fit 50px 1fr 50px;
+  gap: 4px;
 }
 
 .container div {
@@ -23,38 +24,32 @@ ul {
   color: white;
 }
 
-.header {
+.container .header {
   background-color: #393f4d;
 
   grid-column: 1 / -1;
   grid-row: 1;
-  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 3.5fr;
+  padding: 5px;
 }
 
 .logo {
-  display: inline-block;
-  position: absolute;
-  max-width: 300px;
-  min-width: 200px;
-  left: 10px;
-  top: 5px;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
 }
 
 .menu {
-  display: inline-block;
-  position: absolute;
-  max-width: 900px;
-  right: 10px;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .menu ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 100px;
-}
-
-.menue ul li {
-
+  gap: 10px;
 }
 
 .menu ul,
@@ -66,7 +61,15 @@ ul {
   background-color: #C50208;
 
   grid-column-start: 1;
-  grid-row-start: 2 / 4;
+  grid-row: 2 / 4;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 50px;
+}
+
+.sidebar div {
+  display: grid;
+  align-items: center;
 }
 
 .sidebar .photo {
@@ -90,6 +93,11 @@ ul {
 
   grid-column-start: 2;
   grid-row-start: 2;
+}
+
+.nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .nav ul li {
